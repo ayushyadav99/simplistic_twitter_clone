@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<link rel="stylesheet" type= "text/css" href="{% static 'css/my_followers.css'%}">
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <title>All your followers</title>
+</head>
+<body>
+	<header id="app_name">
+		<div class = "container">
+		<h1> HOWLER </h1>
+		<h3> A Twitter clone </h3>
+	</div>
+	</header>
+
+	<nav id="navbar">
+		<div class = "container">
+			<ul>
+				<li> <a href = "/homepage/">Home</a> </li>
+				<li><a href = "/howls/">All Howls</a></li>
+				<li><a href = "/users/">All Users</a></li>
+				<li><a href = "/add/">Follow</a></li>
+        <li> <a href="/profile/">Your Profile </a></li>
+				<li><a href = "/search/">Search Users</a></li>
+				<li><a href = "/logout/">  Logout</a></li>
+			</ul>
+		</div>
+	</nav>
+
+    <h1>My Followers</h1>
+    {%for users in following%}
+      <div class="table">
+        <table border = 0px>
+        <tr>
+        <td><img src = "{{users.picture.url}}" height = 50 width = 50></td>
+        <td><a href = "/users/{{users.id}}">{{users.user.username}}</a></td>
+      </tr>
+      <tr>
+      <td>{{users.user.first_name}}</td>
+      <td>{{users.user.last_name}}</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>{{users.user.email}}</td>
+    </tr>
+  </table>
+    </div>
+    {%endfor%}
+</body>
+</html>

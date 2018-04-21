@@ -1,0 +1,64 @@
+body{
+background-color:#e3e4e5;
+font-family:serif;
+font-size:16;
+color:#555;
+line-height:1.7em;
+padding:0;
+margin:0;
+border:0;
+/*present background color : #e3e4e5 */
+}
+
+.container{
+  width:90%;
+  margin:auto;
+  overflow:hidden;
+}
+#app_name{
+  background-color:coral;
+  color:#fff;
+}
+#app_name h3{
+  padding-left: 50px;
+  color:#555;
+}
+
+
+#navbar{
+background-color:#555;
+color:#fff;
+}
+#navbar ul{
+  padding:0;
+  list-style: none;
+  text-align: right;
+  }
+
+#navbar li{
+  display:inline;
+  margin-right:15px;
+}
+#navbar a{
+  color:white;
+  text-decoration: none;
+}
+.howls{
+  margin-left: 40%;
+  margin-right:20%;
+  border : 1px teal solid;
+  border-radius: 8px;
+}
+.heading
+{
+  margin-left:40%;
+  margin-right:20%
+}
+.credentials{
+  padding-top: 15px;
+
+}
+.credentials h4{
+  color:teal;
+
+}

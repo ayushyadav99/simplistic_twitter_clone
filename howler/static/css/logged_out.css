@@ -1,0 +1,36 @@
+body{
+background-color:#e3e4e5;
+font-family:serif;
+color:#555;
+padding:0;
+margin:0;
+border:0;
+}
+
+.container{
+  width:90%;
+  margin:auto;
+  overflow:hidden;
+}
+#app_name{
+  background-color:coral;
+  color:#fff;
+}
+
+.log_out{
+  padding-top: 100px;
+  text-align: center;
+  font-weight: bold;
+
+
+}
+
+.login a{
+  text-decoration:underline;
+  color: #333;
+
+}
+a:hover{
+  color:coral;
+
+}

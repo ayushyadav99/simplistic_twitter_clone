@@ -1,0 +1,27 @@
+<!DOCTPYE html>
+{% load staticfiles %}
+
+    <link rel="stylesheet" type= "text/css" href="{% static 'css/signup.css'%}">
+    <header id="app_name">
+      <div class = "container">
+      <h1> HOWLER </h1>
+      <h3> A Twitter clone </h3>
+    </div>
+    </header>
+  <div class = "signup">
+    <h1>Sign Up</h1>
+  </div>
+<div class="form">
+    <form method="post">
+        {% csrf_token %}
+        <table>
+          <tr>  <div class:"my-form">    <td>Username : </td>  <td>{{form.username}}</td> </div> </tr>
+          <tr> <div class:"my-form"> <td> First Name : </td>  <td>   {{form.first_name}}</td> </div> </tr>
+          <tr>  <div class:"my-form">  <td>Last Name :  </td>  <td>   {{form.last_name}}</td> </div> </tr>
+          <tr> <div class:"my-form">  <td>Email :      </td>   <td>  {{form.email}}</td> </div> </tr>
+          <tr> <div class:"my-form">  <td>Password :    </td>  <td>  {{form.password1}}</td> </div> </tr>
+          <tr> <div class:"my-form">  <td>Password(again) :</td> <td>{{form.password2}}</td> </div> </tr>
+        </table>
+        <input class = "button" type="submit" value="submit" name="">
+      </form>
+</div>

@@ -1,0 +1,91 @@
+body{
+background-color:#e3e4e5;
+font-family:serif;
+font-size:16;
+color:#555;
+line-height:1.7em;
+padding:0;
+margin:0;
+border:0;
+}
+
+.container{
+  width:90%;
+  margin:auto;
+  overflow:hidden;
+}
+#app_name{
+  background-color:coral;
+  color:#fff;
+}
+
+#navbar{
+background-color:#555;
+color:#fff;
+}
+#navbar ul{
+  padding:0;
+  list-style: none;
+  text-align: right;
+  }
+
+#navbar li{
+  display:inline;
+  margin-right:15px;
+}
+#navbar a{
+  color:white;
+  text-decoration: underline;
+}
+
+a{
+  color:#333;
+  text-decoration: underline; 
+
+}
+a:hover{
+  color:coral;
+
+}
+.name {
+  width:20%;
+  float:left;
+    text-align: left;
+  margin-left: 20px;
+  font-weight:600;
+  border-top: #555;
+  border-bottom: #555;
+}
+.propic{
+  width: 20%;
+  margin-top: 5px;
+  margin-left: 20px;
+  margin-bottom:0;
+  border-bottom:0;
+  padding-bottom:0;
+  float: left;
+  text-align: left;
+
+}
+.howls{
+  text-align:left;
+}
+.wrapper h2{
+  text-align: center;
+  text-decoration: underline;
+}
+.howls p{
+  float: right;
+  width: 60%;
+  padding-left: 5px;
+  color:#333;
+  border : 1px #333 solid;
+  border-radius: 8px;
+}
+
+.wrapper{
+  padding-left: 20px;
+  float:left;
+  width:35%;
+  border-left:3px #555 solid;
+}

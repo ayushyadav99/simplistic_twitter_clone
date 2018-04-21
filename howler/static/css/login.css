@@ -1,0 +1,60 @@
+body{
+background-color:#e3e4e5;
+font-family:serif;
+font-size:16;
+color:#555;
+line-height:1.7em;
+padding:0;
+margin:0;
+border:0;
+/*present background color : #e3e4e5 */
+}
+
+.container{
+  width:90%;
+  margin:auto;
+  overflow:hidden;
+}
+#app_name{
+  background-color:coral;
+  color:#fff;
+}
+#app_name h3{
+  padding-left: 50px;
+  color:#555;
+}
+.form{
+  padding-top: 50px;
+  padding: 10px;
+  margin-left: 28%;
+  text-align: center;
+  color:#555;
+  margin-top: 100px;
+  width:40%;
+
+
+
+  /* perfect teal : #01b2b2*/
+}
+.password input[type="submit"]{
+  background-color: #333;
+  color:#fff;
+  padding : 5px 10px;
+  border:none;
+  margin-left:16%;
+}
+
+.signup{
+  margin-left: 16%;
+
+}
+
+.signup a{
+  text-decoration:underline;
+  color: #333;
+
+}
+a:hover{
+  color:coral;
+
+}

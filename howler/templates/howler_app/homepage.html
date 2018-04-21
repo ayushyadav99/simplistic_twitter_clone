@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<link rel="stylesheet" type= "text/css" href="{% static 'css/homepage.css'%}">
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <title>Search</title>
+</head>
+<body>
+	<header id="app_name">
+		<div class = "container">
+		<h1> HOWLER </h1>
+		<h3> A Twitter clone </h3>
+	</div>
+	</header>
+
+	<nav id="navbar">
+		<div class = "container">
+			<ul>
+				<li> <a href = "/homepage/">Home</a> </li>
+				<li><a href = "/howls/">All Howls</a></li>
+				<li><a href = "/users/">All Users</a></li>
+				<li><a href = "/add/">Follow</a></li>
+          <li> <a href="/profile/">Your Profile </a></li>
+        <li><a href = "/search/">Search Users</a></li>
+				<li><a href = "/logout/">  Logout</a></li>
+			</ul>
+		</div>
+	</nav>
+    <div class = "add_howl">
+        <br>
+        <a href = "/add_howl/"><h2>Howl! </h2></a>
+
+    </div>
+
+        {%for userhowl in list_of_howls %}
+
+        {% for followinguser in following %}
+        {% if followinguser.user == userhowl.user %}
+        <div class = "howls">
+        <table border=0px >
+        <tr>
+        <td> <img src = "{{followinguser.picture.url}}" height = 50 width = 50></td>
+        <td><h3><a href = "/users/{{userhowl.id}}">{{userhowl.user.username}}</a> </h3> </td>
+        {%endif%}
+        {%endfor%}
+      </tr>
+        <tr>
+          <td> </td><td> {{userhowl.howl}} </td>
+      </tr>
+    </table>
+    </div>
+        <br>
+        <br>
+        <br>
+        {%endfor%}
+
+</body>
+</html>

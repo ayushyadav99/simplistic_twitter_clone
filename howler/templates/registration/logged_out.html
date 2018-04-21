@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Logged out</title>
+</head>
+<body>
+  <link rel="stylesheet" type= "text/css" href="{% static 'css/logged_out.css'%}">
+  <header id="app_name">
+    <div class = "container">
+    <h1> HOWLER </h1>
+  </div>
+  </header>
+  <div class = "log_out">
+  <h2>You have logged out</h2>
+  <div>
+    <div class="login">
+      <br>
+      Click the link below to login <br>
+      <a href="/login/"> Login </a>
+    </div>
+</body>
+</html>

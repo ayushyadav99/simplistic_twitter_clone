@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<link rel="stylesheet" type= "text/css" href="{% static 'css/add_follower.css'%}">
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <title>Go follow someone!</title>
+</head>
+<body>
+  <header id="app_name">
+    <div class = "container">
+    <h1> HOWLER </h1>
+    <h3> A Twitter clone </h3>
+  </div>
+  </header>
+
+  <nav id="navbar">
+    <div class = "container">
+      <ul>
+        <li> <a href = "/homepage/">Home</a> </li>
+        <li><a href = "/howls/">All Howls</a></li>
+        <li><a href = "/users/">All Users</a></li>
+        <li><a href = "/add/">Follow</a></li>
+          <li> <a href="/profile/">Your Profile </a></li>
+        <li><a href = "/search/">Search Users</a></li>
+        <li><a href = "/logout/">  Logout</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="form">
+    <form method="POST">
+       {% csrf_token %}
+           {{ form.as_p}}
+          <p>  <input class = "button" type="submit" value="Follow" name=""></p>
+    </form>
+  </div>
+</body>
+</html>

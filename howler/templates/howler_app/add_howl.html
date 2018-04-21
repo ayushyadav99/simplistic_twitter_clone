@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<link rel="stylesheet" type= "text/css" href="{% static 'css/add_howl.css'%}">
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <title>Howl away!</title>
+</head>
+<body>
+	<header id="app_name">
+		<div class = "container">
+		<h1> HOWLER </h1>
+		<h3> A Twitter clone </h3>
+	</div>
+	</header>
+
+	<nav id="navbar">
+		<div class = "container">
+			<ul>
+				<li> <a href = "/homepage/">Home</a> </li>
+				<li><a href = "/howls/">All Howls</a></li>
+				<li><a href = "/users/">All Users</a></li>
+				<li><a href = "/add/">Follow</a></li>
+          <li> <a href="/profile/">Your Profile </a></li>
+        <li><a href = "/search/">Search Users</a></li>
+				<li><a href = "/logout/">  Logout</a></li>
+			</ul>
+		</div>
+	</nav>
+  <h2 align=center> Howl away!</h2>
+  <div class = "howl">
+    <form id = "howler_form" method="post" action"/howler/add_howl/">
+        {% csrf_token %}
+        {% for hidden in form.hidden_fields %}
+            {{hidden}}
+        {%endfor%}
+        {%for field in form.visible_fields%}
+            {{field.errors}}
+            {{field.help_text}}
+            {{field}}
+        {%endfor%} <br>
+      </div>
+      <div class = "submit">
+      <input type="submit" name ="submit" value="Howl!"/>
+      </div>
+    </form>
+</body>
+</html>

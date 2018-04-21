@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<link rel="stylesheet" type= "text/css" href="{% static 'css/view_user.css'%}">
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <title>User</title>
+</head>
+<body>
+    <header id="app_name">
+      <div class = "container">
+      <h1> HOWLER </h1>
+    </div>
+    </header>
+      <nav id="navbar">
+        <div class = "container">
+          <ul>
+            <li> <a href = "/homepage/">Home</a> </li>
+            <li><a href = "/howls/">All Howls</a></li>
+            <li><a href = "/users/">All Users</a></li>
+            <li><a href = "/add/">Follow</a></li>
+              <li> <a href="/profile/">Your Profile </a></li>
+            <li><a href = "/search/">Search Users</a></li>
+            <li><a href = "/logout/">  Logout</a></li>
+          </ul>
+        </div>
+      </nav>
+
+    {%for viewuser in users%}
+      <div class = "credentials">
+    <img src = "{{viewuser.picture.url}}" height = 200 width = 200>
+    <br>
+
+    <h4>{{viewuser.user.username}} <br>
+    {{viewuser.user.first_name}}
+    {{viewuser.user.last_name}} <br>
+    {{viewuser.user.email}} </h4>
+    {%endfor%}
+  </div>
+  <div class ="heading">
+  <h3> User's howls </h3>
+</div>
+  <div class = "howls">
+      {%for howls in allhowls%}
+      <p>  {{howls.howl}} </p>
+    {%endfor%}
+    </div>
+
+
+</body>
+</html>

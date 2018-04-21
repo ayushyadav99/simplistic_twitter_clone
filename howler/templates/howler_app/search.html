@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<link rel="stylesheet" type= "text/css" href="{% static 'css/search.css'%}">
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <title>Search</title>
+</head>
+<body>
+	<header id="app_name">
+		<div class = "container">
+		<h1> HOWLER </h1>
+		<h3> A Twitter clone </h3>
+	</div>
+	</header>
+
+	<nav id="navbar">
+		<div class = "container">
+			<ul>
+				<li> <a href = "/homepage/">Home</a> </li>
+				<li><a href = "/howls/">All Howls</a></li>
+				<li><a href = "/users/">All Users</a></li>
+				<li><a href = "/add/">Follow</a></li>
+          <li> <a href="/profile/">Your Profile </a></li>
+        <li><a href = "/search/">Search Users</a></li>
+				<li><a href = "/logout/">  Logout</a></li>
+			</ul>
+		</div>
+	</nav>
+<div class = "Search">
+<h1>Search User</h1>
+</div>
+<form method="post" action="/search/">
+	{% csrf_token %}
+	<div class = "form-group">
+	<input type="text" name="srh" class="form-control" placeholder="Enter Username">
+	<label>
+		<button type="submit" class="btn btn-danger">Search</button>
+	</label>
+	</div>
+</form><br><br>
+<div>
+
+  {% if messages%}
+	<ul class="messages">
+		{% for k in messages %}
+		<li style="color: #555">{{ k }}</li>
+	{% endfor %}
+</ul>
+{% endif %}
+</div><br>
+		<div style="color: #555">
+			{% if sr %}
+			{% for k in sr %}
+			<table border="0px" width="300px">
+			<tr>
+				<td>Name</td>
+				<td>{{k.user.username}}</td>
+			</tr>
+			<tr>
+				<td>Email ID</td>
+				<td>{{k.user.email}}</td>
+			</tr>
+			<tr>
+				<td>Profile picture</td>
+				<td><img src = "{{ k.user.userprofile.picture.url}}" width="100"></td>
+			</tr>
+		</table>
+	<hr>
+		{% endfor %}
+	{% endif %}
+</div>
+</div>
+</body>
+</html>
